@@ -71,11 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const CONNECT_DIST   = 130;
 
     function getColors() {
-      const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
       return {
-        orange: isDark ? '#F47920' : '#D4610A',
-        blue:   isDark ? '#4A90D9' : '#003D99',
-        bgAlpha: isDark ? 0 : 0,
+        orange: '#f5cd47',
+        blue:   '#d1c4e9',
+        bgAlpha: 0,
       };
     }
 
@@ -109,10 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function drawCircuit(x, y, sz, a) {
-      const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
       ctx.save();
-      ctx.globalAlpha = isDark ? a * 0.35 : a * 0.12;
-      ctx.strokeStyle = '#F47920';
+      ctx.globalAlpha = a * 0.35;
+      ctx.strokeStyle = '#f5cd47';
       ctx.lineWidth   = 0.7;
       ctx.beginPath(); ctx.rect(x, y, sz, sz); ctx.stroke();
       ctx.beginPath(); ctx.arc(x + sz/2, y + sz/2, sz/4, 0, Math.PI*2); ctx.stroke();

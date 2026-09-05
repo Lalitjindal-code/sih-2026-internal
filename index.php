@@ -88,9 +88,6 @@ $current_year    = date('Y');
      HERO SECTION
 ══════════════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="glow-orb orb-orange hero-orb-1"></div>
-  <div class="glow-orb orb-blue hero-orb-2"></div>
-
   <div class="hero-content">
     <!-- Left: Text -->
     <div class="hero-left">
@@ -100,9 +97,9 @@ $current_year    = date('Y');
       </div>
 
       <h1 class="hero-title">
-        <span class="gradient-text">Smart India</span><br />
+        Smart India<br />
         Hackathon 2026<br />
-        <span style="color:var(--muted); font-size:0.65em; font-weight:500;">Internal Round</span>
+        <span style="color:#d1c4e9; font-size:0.65em; font-weight:500;">Internal Round</span>
       </h1>
 
       <p class="hero-sub">
@@ -202,7 +199,6 @@ $current_year    = date('Y');
      ABOUT SECTION
 ══════════════════════════════════════════════════════ -->
 <section id="about" class="section-pad">
-  <div class="glow-orb orb-blue" style="width:500px;height:500px;top:-100px;left:-200px;"></div>
   <div class="container">
     <div class="about-grid">
       <!-- Left: About text + Process -->
@@ -376,7 +372,6 @@ $current_year    = date('Y');
      QUICK LINKS / RESOURCES
 ══════════════════════════════════════════════════════ -->
 <section id="links" class="section-pad">
-  <div class="glow-orb orb-orange" style="width:400px;height:400px;bottom:-100px;right:-100px;"></div>
   <div class="container">
     <div class="text-center ">
       <span class="section-label">Resources</span>
