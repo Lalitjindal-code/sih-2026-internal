@@ -67,11 +67,9 @@ $current_year    = date('Y');
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#themes">Themes</a></li>
       <li><a href="#timeline">Timeline</a></li>
       <li><a href="#links">Resources</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#register">Register</a></li>
       <li>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdya0mbfZyhgf5HdVg5-n7kTskO_dV9WyK3kc8CGcEGXtd5GA/formResponse?pli=1"
            target="_blank" rel="noopener" class="nav-cta" id="nav-register-btn">
@@ -80,15 +78,9 @@ $current_year    = date('Y');
       </li>
     </ul>
 
-    <div style="display:flex;align-items:center;gap:10px;">
-      <!-- Theme Toggle -->
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-        <span id="theme-icon">☀️</span>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -96,9 +88,6 @@ $current_year    = date('Y');
      HERO SECTION
 ══════════════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="glow-orb orb-orange hero-orb-1"></div>
-  <div class="glow-orb orb-blue hero-orb-2"></div>
-
   <div class="hero-content">
     <!-- Left: Text -->
     <div class="hero-left">
@@ -108,9 +97,9 @@ $current_year    = date('Y');
       </div>
 
       <h1 class="hero-title">
-        <span class="gradient-text">Smart India</span><br />
+        Smart India<br />
         Hackathon 2026<br />
-        <span style="color:var(--muted); font-size:0.65em; font-weight:500;">Internal Round</span>
+        <span style="color:#d1c4e9; font-size:0.65em; font-weight:500;">Internal Round</span>
       </h1>
 
       <p class="hero-sub">
@@ -205,35 +194,11 @@ $current_year    = date('Y');
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════
-     STATS BAR
-══════════════════════════════════════════════════════ -->
-<div id="stats">
-  <div class="stats-grid">
-    <div class="stat-item">
-      <span class="stat-num" data-target="1804218" data-suffix="+">18,04,218+</span>
-      <span class="stat-desc">Students Nationally</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num" data-target="9406" data-suffix="+">9,406+</span>
-      <span class="stat-desc">Institutes Participating</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num" data-target="233" data-suffix="">233</span>
-      <span class="stat-desc">Problem Statements</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num" data-target="17" data-suffix="">17</span>
-      <span class="stat-desc">Innovation Themes</span>
-    </div>
-  </div>
-</div>
 
 <!-- ══════════════════════════════════════════════════════
      ABOUT SECTION
 ══════════════════════════════════════════════════════ -->
 <section id="about" class="section-pad">
-  <div class="glow-orb orb-blue" style="width:500px;height:500px;top:-100px;left:-200px;"></div>
   <div class="container">
     <div class="about-grid">
       <!-- Left: About text + Process -->
@@ -305,58 +270,6 @@ $current_year    = date('Y');
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════
-     THEMES SECTION
-══════════════════════════════════════════════════════ -->
-<section id="themes" class="section-pad">
-  <div class="container">
-    <div class="text-center ">
-      <span class="section-label">Innovation Tracks</span>
-      <h2 class="section-title">SIH 2026 <span>Themes</span></h2>
-      <p class="section-desc">Choose from 17 exciting innovation domains. Every theme represents a critical area of national development.</p>
-    </div>
-
-    <?php
-    $themes = [
-      ['icon'=>'🤖', 'name'=>'Smart Automation'],
-      ['icon'=>'🏃', 'name'=>'Fitness & Sports'],
-      ['icon'=>'🚀', 'name'=>'Space Technology'],
-      ['icon'=>'🏛️', 'name'=>'Heritage & Culture'],
-      ['icon'=>'🏥', 'name'=>'MedTech / BioTech / HealthTech'],
-      ['icon'=>'🌾', 'name'=>'Agriculture, FoodTech & Rural Development'],
-      ['icon'=>'🚗', 'name'=>'Smart Vehicles'],
-      ['icon'=>'🚚', 'name'=>'Transportation & Logistics'],
-      ['icon'=>'🦾', 'name'=>'Robotics & Drones'],
-      ['icon'=>'♻️', 'name'=>'Clean & Green Technology'],
-      ['icon'=>'🗺️', 'name'=>'Tourism'],
-      ['icon'=>'⚡', 'name'=>'Renewable / Sustainable Energy'],
-      ['icon'=>'🔐', 'name'=>'Blockchain & Cybersecurity'],
-      ['icon'=>'📚', 'name'=>'Smart Education'],
-      ['icon'=>'🌊', 'name'=>'Disaster Management'],
-      ['icon'=>'🎮', 'name'=>'Games & Toys'],
-      ['icon'=>'💰', 'name'=>'FinTech'],
-    ];
-    ?>
-
-    <div class="themes-grid">
-      <?php foreach ($themes as $i => $theme): ?>
-      <div class="theme-card " style="transition-delay:<?= ($i % 6) * 0.07 ?>s;">
-        <span class="theme-icon"><?= $theme['icon'] ?></span>
-        <div class="theme-name"><?= htmlspecialchars($theme['name']) ?></div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-
-    <div class="text-center" style="margin-top:36px;">
-      <a href="https://www.sih.gov.in/SIH_Themes" target="_blank" rel="noopener" class="btn-secondary" id="themes-link">
-        Explore All Themes on SIH Website
-        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- ══════════════════════════════════════════════════════
      TIMELINE SECTION
@@ -459,7 +372,6 @@ $current_year    = date('Y');
      QUICK LINKS / RESOURCES
 ══════════════════════════════════════════════════════ -->
 <section id="links" class="section-pad">
-  <div class="glow-orb orb-orange" style="width:400px;height:400px;bottom:-100px;right:-100px;"></div>
   <div class="container">
     <div class="text-center ">
       <span class="section-label">Resources</span>
@@ -579,165 +491,6 @@ $current_year    = date('Y');
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════
-     FAQ SECTION
-══════════════════════════════════════════════════════ -->
-<section id="faq" class="section-pad">
-  <div class="container">
-    <div class="text-center ">
-      <span class="section-label">Need Help?</span>
-      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-      <p class="section-desc">Find answers to common questions about SIH 2026 Internal Round at SATI.</p>
-    </div>
-
-    <?php
-    $faqs = [
-      [
-        'q' => 'Who can participate in SIH 2026 Internal Round?',
-        'a' => 'Any currently enrolled student of Samrat Ashok Technological Institute (SATI), Vidisha — whether UG or PG — is eligible to participate. Students from all departments and branches can form teams.'
-      ],
-      [
-        'q' => 'What is the team size requirement?',
-        'a' => 'A team must have a minimum of 2 members and a maximum of 6 members. All team members must be registered students of SATI Vidisha. Cross-department teams are allowed and encouraged!'
-      ],
-      [
-        'q' => 'How do I select a Problem Statement (PS)?',
-        'a' => 'Visit the official SIH Problem Statements page at <a href="https://www.sih.gov.in/sih2026PS" target="_blank">sih.gov.in/sih2026PS</a>. Browse through 17 themes and 233+ problem statements. Choose one that excites your team and aligns with your skills.'
-      ],
-      [
-        'q' => 'Is registration free? What is the process?',
-        'a' => 'Yes, registration is completely free. Fill out the Registration Form (link above), and also ensure that the team leader registers on the official SIH portal at <a href="https://www.sih.gov.in" target="_blank">sih.gov.in</a>. Last date for registration is 7 September 2026.'
-      ],
-      [
-        'q' => 'What should the idea PPT contain?',
-        'a' => 'Use the official SIH 2026 Idea Presentation Format (available for download above). The PPT should clearly describe the Problem Statement, your proposed solution, technology stack, feasibility, and team details. Stick to the given format strictly.'
-      ],
-      [
-        'q' => 'Can students from different departments form a team?',
-        'a' => 'Absolutely! Interdisciplinary teams are highly encouraged. A mix of CSE, ECE, Mechanical, Civil, MBA, and other branches can bring diverse perspectives and stronger solutions.'
-      ],
-      [
-        'q' => 'What happens after the Internal Round?',
-        'a' => 'The top teams from the Internal Round will be recommended by SATI\'s SPOC for the SIH 2026 Grand Finale — a national-level event where teams compete against participants from all over India. Selected teams submit their ideas on the SIH portal.'
-      ],
-      [
-        'q' => 'What is the prize at the National Level (Grand Finale)?',
-        'a' => 'The SIH Grand Finale offers prizes worth lakhs for winning teams, along with national recognition, certificates from MIC/AICTE, and opportunities for incubation and mentorship. Check the <a href="https://www.sih.gov.in" target="_blank">SIH official website</a> for updated prize details.'
-      ],
-      [
-        'q' => 'What is the evaluation criteria for the Internal Round?',
-        'a' => 'Teams will be evaluated on: (1) Innovation & Originality, (2) Feasibility & Scalability, (3) Technical Approach, (4) Impact & Relevance to Problem Statement, and (5) Clarity of Presentation. Judges will be faculty members and industry experts.'
-      ],
-      [
-        'q' => 'How can I join the WhatsApp community for updates?',
-        'a' => 'Click the WhatsApp Community link on this page or visit: <a href="https://chat.whatsapp.com/ITnW1NjKHrTAo9F9Lrst8m" target="_blank">chat.whatsapp.com/ITnW1NjKHrTAo9F9Lrst8m</a>. All important announcements, schedule changes, and resources will be shared there.'
-      ],
-    ];
-    ?>
-
-    <div class="faq-wrapper">
-      <?php foreach ($faqs as $i => $faq): ?>
-      <div class="faq-item " id="faq-<?= $i + 1 ?>">
-        <button class="faq-question" id="faq-btn-<?= $i + 1 ?>" aria-expanded="false">
-          <span class="faq-q-text"><?= htmlspecialchars($faq['q']) ?></span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner"><?= $faq['a'] ?></div>
-        </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════
-     CONTACT SECTION
-══════════════════════════════════════════════════════ -->
-<section id="contact" class="section-pad">
-  <div class="glow-orb orb-blue" style="width:500px;height:500px;bottom:-150px;left:-150px;"></div>
-  <div class="container">
-    <div class="text-center ">
-      <span class="section-label">Get In Touch</span>
-      <h2 class="section-title">Contact <span>Us</span></h2>
-      <p class="section-desc">Have a question not covered in the FAQ? Reach out to us — we're here to help.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-info-cards ">
-        <div class="contact-card">
-          <div class="contact-card-icon">🏫</div>
-          <div class="contact-card-content">
-            <h4>Institution</h4>
-            <p>Samrat Ashok Technological Institute (SATI)<br/>Vidisha, Madhya Pradesh — 464001<br/>RGPV Affiliated | Government Institute</p>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">👩‍🏫</div>
-          <div class="contact-card-content">
-            <h4>Faculty Coordinator</h4>
-            <p>Dr. Divya Rishi Sahu<br/>SATI Vidisha</p>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">🚀</div>
-          <div class="contact-card-content">
-            <h4>Organizer</h4>
-            <p>Startup Cell, SATI Vidisha<br/>Smart India Hackathon 2026 — Internal Round</p>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">🌐</div>
-          <div class="contact-card-content">
-            <h4>SIH Official Contact</h4>
-            <p>For national-level queries:<br/>
-              <a href="mailto:sih@aicte-india.org">sih@aicte-india.org</a><br/>
-              <a href="https://www.sih.gov.in/contactUs" target="_blank" rel="noopener">sih.gov.in/contactUs</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="social-links-block ">
-        <a href="https://chat.whatsapp.com/ITnW1NjKHrTAo9F9Lrst8m"
-           target="_blank" rel="noopener" class="social-btn whatsapp" id="contact-whatsapp-btn">
-          <span class="social-btn-icon">💬</span>
-          <span class="social-btn-text">
-            <span class="social-btn-label">Join for Updates &amp; Announcements</span>
-            <span class="social-btn-value">WhatsApp Community</span>
-          </span>
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-          </svg>
-        </a>
-
-        <a href="https://www.sih.gov.in/" target="_blank" rel="noopener" class="social-btn sih-site" id="contact-sih-link">
-          <span class="social-btn-icon">🏛️</span>
-          <span class="social-btn-text">
-            <span class="social-btn-label">Official Government Portal</span>
-            <span class="social-btn-value">SIH Website — sih.gov.in</span>
-          </span>
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-          </svg>
-        </a>
-
-        <!-- Map embed placeholder card -->
-        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px;text-align:center;">
-          <div style="font-size:2.5rem;margin-bottom:12px;">📍</div>
-          <div style="font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:6px;">SATI Campus, Vidisha</div>
-          <div style="font-size:0.85rem;color:var(--muted);margin-bottom:16px;">Madhya Pradesh — 464001</div>
-          <a href="https://maps.google.com/?q=Samrat+Ashok+Technological+Institute+Vidisha+MP"
-             target="_blank" rel="noopener"
-             style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:0.85rem;font-weight:600;color:var(--orange);border:1px solid var(--border);padding:8px 18px;border-radius:50px;transition:var(--transition);"
-             id="map-link">
-            Open in Google Maps →
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ══════════════════════════════════════════════════════
      FOOTER
@@ -770,10 +523,9 @@ $current_year    = date('Y');
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#about">About SIH</a></li>
-          <li><a href="#themes">Themes</a></li>
           <li><a href="#timeline">Timeline</a></li>
           <li><a href="#links">Resources</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#register">Register</a></li>
         </ul>
       </div>
 
