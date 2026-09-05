@@ -1,5 +1,6 @@
 
 {
+  "name": "sih-2026-internal",
   "functions": {
     "index.php": {
       "runtime": "vercel-php@0.6.1"
