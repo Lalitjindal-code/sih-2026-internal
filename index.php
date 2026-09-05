@@ -1,4 +1,12 @@
-
+<?php
+// ─── Dynamic Date Logic ───────────────────────────────────
+$event_date      = new DateTime('2026-09-10 09:00:00', new DateTimeZone('Asia/Kolkata'));
+$reg_deadline    = new DateTime('2026-09-07 23:59:59', new DateTimeZone('Asia/Kolkata'));
+$now             = new DateTime('now', new DateTimeZone('Asia/Kolkata'));
+$reg_closed      = $now > $reg_deadline;
+$event_over      = $now > $event_date;
+$current_year    = date('Y');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +41,14 @@
      NOTICE BANNER
 ══════════════════════════════════════════════════════ -->
 <div class="notice-banner" id="notice-banner">
+  <?php if ($event_over): ?>
+    <span class="notice-highlight">✅ SIH 2026 Internal Round Completed.</span> Thank you to all participants!
+  <?php elseif ($reg_closed): ?>
+    <span class="notice-highlight">⚠️ Registration Closed.</span> Event Day: <span class="notice-highlight">10 September 2026</span> at SATI Campus.
+  <?php else: ?>
     🎯 <span class="notice-highlight">Registration Open!</span> Last date to register: <span class="notice-highlight">7 September 2026</span> &nbsp;|&nbsp;
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdya0mbfZyhgf5HdVg5-n7kTskO_dV9WyK3kc8CGcEGXtd5GA/formResponse?pli=1" target="_blank" rel="noopener" style="color:var(--orange);font-weight:700;">Register Now →</a>
+  <?php endif; ?>
 </div>
 
 <!-- ══════════════════════════════════════════════════════
@@ -788,7 +802,7 @@
 
     <div class="footer-bottom">
       <p class="copyright">
-        &copy; 2026 Startup Cell, SATI Vidisha. All Rights Reserved. 2026 Internal Round.
+        &copy; <?php echo $current_year; ?> Startup Cell, SATI Vidisha. All Rights Reserved. 2026 Internal Round.
         Powered by MIC-AICTE, Govt. of India.
       </p>
       <div class="footer-badges">
