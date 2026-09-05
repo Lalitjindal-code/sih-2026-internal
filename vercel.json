@@ -2,11 +2,11 @@
 {
   "name": "sih-2026-internal",
   "functions": {
-    "index.php": {
+    "api/index.php": {
       "runtime": "vercel-php@0.6.1"
     }
   },
   "routes": [
-    { "src": "/", "dest": "/index.php" }
+    { "src": "/", "dest": "/api/index.php" }
   ]
 }
