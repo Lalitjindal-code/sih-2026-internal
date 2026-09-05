@@ -205,29 +205,6 @@ $current_year    = date('Y');
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════
-     STATS BAR
-══════════════════════════════════════════════════════ -->
-<div id="stats">
-  <div class="stats-grid">
-    <div class="stat-item">
-      <span class="stat-num" data-target="1804218" data-suffix="+">18,04,218+</span>
-      <span class="stat-desc">Students Nationally</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num" data-target="9406" data-suffix="+">9,406+</span>
-      <span class="stat-desc">Institutes Participating</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num" data-target="233" data-suffix="">233</span>
-      <span class="stat-desc">Problem Statements</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num" data-target="17" data-suffix="">17</span>
-      <span class="stat-desc">Innovation Themes</span>
-    </div>
-  </div>
-</div>
 
 <!-- ══════════════════════════════════════════════════════
      ABOUT SECTION
